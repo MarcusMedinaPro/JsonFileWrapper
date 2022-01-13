@@ -4,9 +4,13 @@
 //  https://tldrlegal.com/license/apache-license-2.0-%28apache-2.0%29
 // -----------------------------------------------------------------------------------------------
 namespace JsonFileWrapperTests;
+
+using System;
+using System.Collections.Generic;
 using System.IO;
-using JsonFileWrapper;
+using MarcusMedinaPro.JsonFileWrapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 
 /// <summary>
 /// The json file tests.
@@ -18,6 +22,10 @@ public class JsonFileTests
     /// The filename.
     /// </summary>
     private const string filename = "Hello.txt";
+    /// <summary>
+    /// The test message
+    /// </summary>
+    private const string message = "Hello Crazy World";
 
     /// <summary>
     /// Cleans up the tests.
@@ -45,7 +53,11 @@ public class JsonFileTests
     [TestMethod()]
     public void JsonFileTest()
     {
-        var file = new JsonFile<string>("");
+        var file = new JsonFile<List<string>>("test")
+        {
+            Data = new List<string>() { message },
+            Format = null
+        };
         Assert.IsNotNull(file);
     }
 
@@ -56,15 +68,15 @@ public class JsonFileTests
     public void LoadTest()
     {
         // Arrange
-        const string? expected = "Hello Crazy World";
-        File.WriteAllText(filename, expected);
-        var file = new JsonFile<string>(filename);
+        var expected = new List<string>() { message };
+        File.WriteAllText(filename, message);
+        var file = new JsonFile<List<string>>(filename);
 
         // Act
         _ = file.Load();
 
         // Assert
-        Assert.AreEqual(expected, file.Data);
+        Assert.AreEqual(string.Join(',', expected), message);
     }
 
     /// <summary>
@@ -74,9 +86,10 @@ public class JsonFileTests
     public void SaveTest()
     {
         //Arrange
-        var file = new JsonFile<string>(filename)
+        var file = new JsonFile<List<string>>(filename)
         {
-            Data = "Hello Crazy World"
+            Data = new List<string>() { "Hello Crazy World" },
+            Format = null,
         };
 
         // Act
