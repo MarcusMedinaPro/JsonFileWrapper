@@ -1,80 +1,88 @@
-﻿using System.IO;
+﻿// -----------------------------------------------------------------------------------------------
+//  JsonFileTests.cs by Marcus Medina, Copyright (C) 2021, http://MarcusMedina.Pro.
+//  Published under Apache License 2.0 (Apache-2.0)
+//  https://tldrlegal.com/license/apache-license-2.0-%28apache-2.0%29
+// -----------------------------------------------------------------------------------------------
+namespace JsonFileWrapperTests;
+using System.IO;
 using JsonFileWrapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace JsonFileWrapperTests
+/// <summary>
+/// The json file tests.
+/// </summary>
+[TestClass()]
+public class JsonFileTests
 {
-    [TestClass()]
-    public class JsonFileTests
+    /// <summary>
+    /// The filename.
+    /// </summary>
+    private const string filename = "Hello.txt";
+
+    /// <summary>
+    /// Cleans up the tests.
+    /// </summary>
+    [TestCleanup]
+    public void CleanUp()
     {
-        /// <summary>
-        /// The filename.
-        /// </summary>
-        private const string filename = "Hello.txt";
+        if (File.Exists(filename))
+            File.Delete(filename);
+    }
 
-        /// <summary>
-        /// Cleans up the tests.
-        /// </summary>
-        [TestCleanup]
-        public void CleanUp ()
+    /// <summary>
+    /// Initialize the tests
+    /// </summary>
+    [TestInitialize]
+    public void Init()
+    {
+        if (File.Exists(filename))
+            File.Delete(filename);
+    }
+
+    /// <summary>
+    /// Jsons the file test.
+    /// </summary>
+    [TestMethod()]
+    public void JsonFileTest()
+    {
+        var file = new JsonFile<string>("");
+        Assert.IsNotNull(file);
+    }
+
+    /// <summary>
+    /// Loads a test.
+    /// </summary>
+    [TestMethod()]
+    public void LoadTest()
+    {
+        // Arrange
+        const string? expected = "Hello Crazy World";
+        File.WriteAllText(filename, expected);
+        var file = new JsonFile<string>(filename);
+
+        // Act
+        _ = file.Load();
+
+        // Assert
+        Assert.AreEqual(expected, file.Data);
+    }
+
+    /// <summary>
+    /// Saves a test.
+    /// </summary>
+    [TestMethod()]
+    public void SaveTest()
+    {
+        //Arrange
+        var file = new JsonFile<string>(filename)
         {
-            if (File.Exists(filename))
-                File.Delete(filename);
-        }
+            Data = "Hello Crazy World"
+        };
 
-        /// <summary>
-        /// Initialize the tests
-        /// </summary>
-        [TestInitialize]
-        public void Init ()
-        {
-            if (File.Exists(filename))
-                File.Delete(filename);
-        }
+        // Act
+        file.Save();
 
-        /// <summary>
-        /// Jsons the file test.
-        /// </summary>
-        [TestMethod()]
-        public void JsonFileTest ()
-        {
-            var file = new JsonFile<string>("");
-            Assert.IsNotNull(file);
-        }
-
-        /// <summary>
-        /// Loads a test.
-        /// </summary>
-        [TestMethod()]
-        public void LoadTest ()
-        {
-            // Arrange
-            var expected = "Hello Crazy World";
-            File.WriteAllText(filename, expected);
-            var file = new JsonFile<string>(filename);
-
-            // Act
-            file.Load();
-
-            // Assert
-            Assert.AreEqual(expected, file.Data);
-        }
-
-        /// <summary>
-        /// Saves a test.
-        /// </summary>
-        [TestMethod()]
-        public void SaveTest ()
-        {
-            //Arrange
-            var file = new JsonFile<string>(filename);
-            file.Data = "Hello Crazy World";
-
-            // Act
-            file.Save();
-
-            // Assert
-            Assert.IsNotNull(file);
-        }
+        // Assert
+        Assert.IsNotNull(file);
     }
 }
