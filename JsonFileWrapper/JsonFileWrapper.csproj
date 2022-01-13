@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+	  <Authors>Marcus Medina</Authors>
+	  <Company>MarcusMedinaPro</Company>
+	  <Description>JSON wrapper with Save and load functions</Description>
+	  <RootNamespace>MarcusMedinaPro.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+	  <PackageTags>json;wrapper;c#;csharp;dotnet;core;.net</PackageTags>
+
+	  <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+</Project>
