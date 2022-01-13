@@ -36,7 +36,7 @@ public class JsonFile<T> where T : new()
     /// <summary>
     /// Gets or Sets the suffix (default is .json).
     /// </summary>
-    public string Suffix { get; set; } = ".json";
+    public string Suffix { get; set; } = "json";
 
     /// <summary>
     /// Gets or sets the Data object.
@@ -59,11 +59,11 @@ public class JsonFile<T> where T : new()
     public T? Load()
     {
         var data = string.Empty;
-        if (File.Exists(Filename + Suffix))
+        if (File.Exists($"{Filename}.{Suffix}"))
         {
             try
             {
-                data = File.ReadAllText(Filename + Suffix);
+                data = File.ReadAllText($"{Filename}.{Suffix}");
             }
             catch (Exception ex)
             {
@@ -104,7 +104,7 @@ public class JsonFile<T> where T : new()
 
         try
         {
-            File.WriteAllText(Filename + Suffix, json);
+            File.WriteAllText($"{Filename}.{Suffix}", json);
         }
         catch (Exception ex)
         {
