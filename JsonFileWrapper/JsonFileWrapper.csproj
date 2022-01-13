@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
@@ -9,7 +9,7 @@
 		<Company>MarcusMedinaPro</Company>
 		<Description>JSON file wrapper with Save and load functions</Description>
 		<RootNamespace>MarcusMedinaPro.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-		<PackageTags>json;wrapper;c#;csharp;dotnet;core;.net</PackageTags>
+		<PackageTags>json;wrapper;c#;csharp;dotnet;core;.net;load;save</PackageTags>
 
 		<PackageProjectUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper</RepositoryUrl>

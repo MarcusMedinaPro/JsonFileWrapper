@@ -3,6 +3,7 @@
 //  Published under Apache License 2.0 (Apache-2.0)
 //  https://tldrlegal.com/license/apache-license-2.0-%28apache-2.0%29
 // -----------------------------------------------------------------------------------------------
+
 namespace JsonFileWrapperTests;
 
 using System;
@@ -86,14 +87,14 @@ public class JsonFileTests
     public void SaveTest()
     {
         //Arrange
-        var file = new JsonFile<List<string>>(filename)
-        {
-            Data = new List<string>() { "Hello Crazy World" },
-            Format = null,
-        };
+var file = new JsonFile<List<string>>(filename)
+{
+    Data = new List<string>() { "Hello Crazy World" },
+    Format = null,
+};
 
-        // Act
-        file.Save();
+// Act
+file.Save();
 
         // Assert
         Assert.IsNotNull(file);
