@@ -15,8 +15,8 @@
 		<RepositoryUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper</RepositoryUrl>
 		<ApplicationIcon>json-file.ico</ApplicationIcon>
 		<PackageIcon>json-file.png</PackageIcon>
-		<License>../LICENSE</License>
-		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageLicenseFile>..\LICENSE</PackageLicenseFile>
+		<License>..\LICENSE</License>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 	</PropertyGroup>
 
