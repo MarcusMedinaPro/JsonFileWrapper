@@ -46,7 +46,7 @@ public class JsonFile<T> where T : new()
     /// <summary>
     /// Gets or Sets the serialisation format settings.
     /// </summary>
-    public JsonSerializerSettings Format { get; set; }
+    public JsonSerializerSettings? Format { get; set; }
 
     /// <summary>
     /// Gets or Sets the suffix (default is .json).
