@@ -6,12 +6,10 @@
 
 namespace JsonFileWrapperTests;
 
-using System;
 using System.Collections.Generic;
 using System.IO;
 using MarcusMedinaPro.JsonFileWrapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json;
 
 /// <summary>
 /// The json file tests.
@@ -23,6 +21,7 @@ public class JsonFileTests
     /// The filename.
     /// </summary>
     private const string filename = "Hello.txt";
+
     /// <summary>
     /// The test message
     /// </summary>
@@ -36,6 +35,24 @@ public class JsonFileTests
     {
         if (File.Exists(filename))
             File.Delete(filename);
+    }
+
+    /// <summary>
+    /// Test to see if implicit conversion works.
+    /// </summary>
+    [TestMethod()]
+    public void ImplicitGetDataTest()
+    {
+        // Arrange
+        var file = new JsonFile<List<string>>(filename)
+        {
+            Data = new List<string> { "One", "Two", "Three" }
+        };
+        var expected = file.Data.Count;
+        // act
+        List<string> actual = file;
+
+        Assert.AreEqual(expected, actual.Count);
     }
 
     /// <summary>
@@ -69,7 +86,7 @@ public class JsonFileTests
     public void LoadEmptyFileTest()
     {
         // Arrange
-        var expected = 0;
+        const int expected = 0;
         var file = new JsonFile<List<string>>("FileDoesNotExist");
 
         // Act
@@ -79,25 +96,6 @@ public class JsonFileTests
         Assert.IsNotNull(file.Data);
         Assert.AreEqual(expected, file.Data.Count);
     }
-
-    /// <summary>
-    /// Loads a file that does not exist test.
-    /// </summary>
-    [TestMethod()]
-    public void SavesEvenIfDataIsNull()
-    {
-        // Arrange
-        var expected = 0;
-        var file = new JsonFile<List<string>>("DataNull");
-
-        // Act
-        file.Save();
-
-        // Assert
-        Assert.IsNotNull(file.Data);
-        Assert.AreEqual(expected, file.Data.Count);
-    }
-
 
     /// <summary>
     /// Loads a test.
@@ -118,20 +116,38 @@ public class JsonFileTests
     }
 
     /// <summary>
+    /// Loads a file that does not exist test.
+    /// </summary>
+    [TestMethod()]
+    public void SavesEvenIfDataIsNull()
+    {
+        // Arrange
+        const int expected = 0;
+        var file = new JsonFile<List<string>>("DataNull");
+
+        // Act
+        file.Save();
+
+        // Assert
+        Assert.IsNotNull(file.Data);
+        Assert.AreEqual(expected, file.Data.Count);
+    }
+
+    /// <summary>
     /// Saves a test.
     /// </summary>
     [TestMethod()]
     public void SaveTest()
     {
         //Arrange
-var file = new JsonFile<List<string>>(filename)
-{
-    Data = new List<string>() { "Hello Crazy World" },
-    Format = null,
-};
+        var file = new JsonFile<List<string>>(filename)
+        {
+            Data = new List<string>() { "Hello Crazy World" },
+            Format = null,
+        };
 
-// Act
-file.Save();
+        // Act
+        file.Save();
 
         // Assert
         Assert.IsNotNull(file);
