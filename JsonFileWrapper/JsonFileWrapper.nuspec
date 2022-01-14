@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+	<metadata minClientVersion="2.5">
+		<id>MarcusMedinaPro.JsonFileWrapper</id>
+		<version>$Version$</version>
+		<title>JsonFileWrapper</title>
+		<authors>$Authors$</authors>
+		<requireLicenseAcceptance>true</requireLicenseAcceptance>
+		<license type="file">content/LICENSE</license>
+		<icon>$PackageIcon$</icon>
+		<projectUrl>$PackageProjectUrl$</projectUrl>
+		<repository  type="git" url="https://github.com/MarcusMedinaPro/JsonFileWrapper"></repository>
+		<description>$description$</description>
+		<summary>$description$</summary>
+		<!--<releaseNotes>Summary of changes made in this release of the package.</releaseNotes> -->
+		<copyright>$copyright$</copyright>
+		<tags>$packagetags$</tags>
+		<readme>content\ReadMe.md</readme>
+		<language>English</language>
+		<dependencies>
+			<group targetFramework="net6.0">
+				<dependency id="Newtonsoft.Json" version="13.0.1" />
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="..\readme.md" target="docs\" />
+	</files>
+</package>

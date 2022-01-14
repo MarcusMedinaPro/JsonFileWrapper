@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
+		<CopyRight>Copyright (c) Marcus Medina,2022.</CopyRight>
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
@@ -14,23 +15,32 @@
 		<RootNamespace>MarcusMedinaPro.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		<PackageTags>json;wrapper;c#;csharp;dotnet;core;.net;load;save</PackageTags>
 		<PackageProjectUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper</RepositoryUrl>
+		<RepositoryUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper.git</RepositoryUrl>
 		<ApplicationIcon>json-file.ico</ApplicationIcon>
-		<PackageIcon>json-file.png</PackageIcon>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+
+		<PackageIcon>content/json-file.png</PackageIcon>
+		<PackageReadmeFile>ReadMe.md</PackageReadmeFile>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Include="json-file.png">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </Content>
+		<Content Include="./json-file.png" Pack="true" PackagePath="\">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="../ReadMe.md" Pack="true" PackagePath="\">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="../LICENSE" Pack="true" PackagePath="">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Resource Include="json-file.ico">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </Resource>
+		<Resource Include="json-file.ico">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</Resource>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -48,6 +58,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-	</ItemGroup> 
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="json-file.ico">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
 </Project>
