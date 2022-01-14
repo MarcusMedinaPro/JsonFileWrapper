@@ -63,6 +63,43 @@ public class JsonFileTests
     }
 
     /// <summary>
+    /// Loads a file that does not exist test.
+    /// </summary>
+    [TestMethod()]
+    public void LoadEmptyFileTest()
+    {
+        // Arrange
+        var expected = 0;
+        var file = new JsonFile<List<string>>("FileDoesNotExist");
+
+        // Act
+        _ = file.Load();
+
+        // Assert
+        Assert.IsNotNull(file.Data);
+        Assert.AreEqual(expected, file.Data.Count);
+    }
+
+    /// <summary>
+    /// Loads a file that does not exist test.
+    /// </summary>
+    [TestMethod()]
+    public void SavesEvenIfDataIsNull()
+    {
+        // Arrange
+        var expected = 0;
+        var file = new JsonFile<List<string>>("DataNull");
+
+        // Act
+        file.Save();
+
+        // Assert
+        Assert.IsNotNull(file.Data);
+        Assert.AreEqual(expected, file.Data.Count);
+    }
+
+
+    /// <summary>
     /// Loads a test.
     /// </summary>
     [TestMethod()]

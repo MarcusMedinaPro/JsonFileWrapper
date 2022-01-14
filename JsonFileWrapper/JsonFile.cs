@@ -58,7 +58,7 @@ public class JsonFile<T> where T : new()
     /// </summary>
     public T? Load()
     {
-        var data = string.Empty;
+        var data = "[]";
         if (File.Exists($"{Filename}.{Suffix}"))
         {
             try
@@ -69,7 +69,7 @@ public class JsonFile<T> where T : new()
             {
                 Debug.WriteLine("Error reading file:");
                 Debug.WriteLine(ex.Message);
-                data = "{}";
+                data = "[]";
             }
         }
 
@@ -81,6 +81,7 @@ public class JsonFile<T> where T : new()
         {
             Debug.WriteLine("Error deserializing file:");
             Debug.WriteLine(ex.Message);
+            Data = new T();
         }
 
         return Data;
@@ -92,6 +93,8 @@ public class JsonFile<T> where T : new()
     public void Save()
     {
         var json="";
+        if (Data == null)
+            Data = new T();
         try
         {
             json = JsonConvert.SerializeObject(Data, null, Format);

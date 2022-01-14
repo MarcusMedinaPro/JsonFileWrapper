@@ -34,9 +34,9 @@ file.Load();
 var People = file.Data;
 
 // Now you can use your list as you want
-People.Add(new Person{Name="Adam",Lastname="West"});
-People.Add(new Person{Name="Bob",Lastname="Hoskins"});
-People.Add(new Person{Name="James",Lastname="Woods"});
+People.Add(new Person { Name = "Adam", LastName = "West" });
+People.Add(new Person { Name = "Bob", LastName = "Hoskins" });
+People.Add(new Person { Name = "James", LastName = "Woods" });
 
 // Save the list
 file.Save();
