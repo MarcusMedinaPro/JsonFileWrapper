@@ -34,24 +34,31 @@ public class JsonFile<T> where T : new()
     }
 
     /// <summary>
-    /// Gets or Sets the suffix (default is .json).
-    /// </summary>
-    public string Suffix { get; set; } = "json";
-
-    /// <summary>
     /// Gets or sets the Data object.
     /// </summary>
-    public T? Data { get; set; } = default;
+    public T? Data { get; set; } = new T();
 
     /// <summary>
     /// Gets or sets the Filename, just the name, without suffix. <see cref="Suffix"/> will be added automatically.
     /// </summary>
-    public string Filename { get; set; } = "";
+    public string Filename { get; } = "";
 
     /// <summary>
     /// Gets or Sets the serialisation format settings.
     /// </summary>
     public JsonSerializerSettings Format { get; set; }
+
+    /// <summary>
+    /// Gets or Sets the suffix (default is .json).
+    /// </summary>
+    public string Suffix { get; set; } = "json";
+
+    public static implicit operator T(JsonFile<T> file)
+    {
+        if (file.Data == null)
+            file.Data = new T();
+        return file.Data;
+    }
 
     /// <summary>
     /// Loads the file.
@@ -92,7 +99,7 @@ public class JsonFile<T> where T : new()
     /// </summary>
     public void Save()
     {
-        var json="";
+        var json = "";
         if (Data == null)
             Data = new T();
         try

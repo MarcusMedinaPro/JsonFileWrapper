@@ -8,7 +8,9 @@ namespace JsonFileWrapperTests;
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using MarcusMedinaPro.JsonFileWrapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
@@ -69,7 +71,7 @@ public class JsonFileTests
     public void LoadEmptyFileTest()
     {
         // Arrange
-        var expected = 0;
+        const int expected = 0;
         var file = new JsonFile<List<string>>("FileDoesNotExist");
 
         // Act
@@ -87,7 +89,7 @@ public class JsonFileTests
     public void SavesEvenIfDataIsNull()
     {
         // Arrange
-        var expected = 0;
+        const int expected = 0;
         var file = new JsonFile<List<string>>("DataNull");
 
         // Act
@@ -97,7 +99,6 @@ public class JsonFileTests
         Assert.IsNotNull(file.Data);
         Assert.AreEqual(expected, file.Data.Count);
     }
-
 
     /// <summary>
     /// Loads a test.
@@ -124,16 +125,34 @@ public class JsonFileTests
     public void SaveTest()
     {
         //Arrange
-var file = new JsonFile<List<string>>(filename)
-{
-    Data = new List<string>() { "Hello Crazy World" },
-    Format = null,
-};
+        var file = new JsonFile<List<string>>(filename)
+        {
+            Data = new List<string>() { "Hello Crazy World" },
+            Format = null,
+        };
 
-// Act
-file.Save();
+        // Act
+        file.Save();
 
         // Assert
         Assert.IsNotNull(file);
+    }
+
+    /// <summary>
+    /// Test to see if implicit conversion works.
+    /// </summary>
+    [TestMethod()]
+    public void ImplicitGetDataTest()
+    {
+        // Arrange
+        var file = new JsonFile<List<string>>(filename)
+        {
+            Data = new List<string> { "One", "Two", "Three" }
+        };
+        var expected = file.Data.Count;
+        // act
+        List<string> actual = file;
+
+        Assert.AreEqual(expected, actual.Count);
     }
 }
