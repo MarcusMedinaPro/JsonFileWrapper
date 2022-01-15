@@ -9,7 +9,7 @@
 		<license type="file">content/LICENSE</license>
 		<icon>$PackageIcon$</icon>
 		<projectUrl>$PackageProjectUrl$</projectUrl>
-		<repository type="git" url="https://github.com/MarcusMedinaPro/JsonFileWrapper"></repository>
+		<repository type="git" url="https://github.com/MarcusMedinaPro/JsonFileWrapper.git"></repository>
 		<description>$description$</description>
 		<summary>$description$</summary>
 		<!--<releaseNotes>Summary of changes made in this release of the package.</releaseNotes> -->

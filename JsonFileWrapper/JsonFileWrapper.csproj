@@ -18,52 +18,24 @@
 		<RepositoryUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper.git</RepositoryUrl>
 		<ApplicationIcon>json-file.ico</ApplicationIcon>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-
 		<PackageIcon>content/json-file.png</PackageIcon>
 		<PackageReadmeFile>ReadMe.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Content Include="./json-file.png" Pack="true" PackagePath="\">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</Content>
-		<Content Include="../ReadMe.md" Pack="true" PackagePath="\">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</Content>
-		<Content Include="../LICENSE" Pack="true" PackagePath="">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</Content>
-	</ItemGroup>
-
-	<ItemGroup>
-		<Resource Include="json-file.ico">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</Resource>
-	</ItemGroup>
-
-	<ItemGroup>
-		<Resource Include="ReadMe.md">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</Resource>
-	</ItemGroup>
-
-	<ItemGroup>
-		<Resource Include="LICENSE">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</Resource>
+		<Content Include="./json-file.ico" Pack="true" PackagePath="\" />
+		<Content Include="./json-file.png" Pack="true" PackagePath="\" />
+		<Content Include="../ReadMe.md" Pack="true" PackagePath="\" />
+		<Content Include="../LICENSE" Pack="true" PackagePath="\" />
+		<!--
+		<Resource Include="json-file.ico" Pack="true" PackagePath="" />
+		<Resource Include="ReadMe.md" Pack="true" PackagePath="" />
+		<Resource Include="LICENSE"  Pack="true" PackagePath="" />
+		-->
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Update="json-file.ico">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
 	</ItemGroup>
 </Project>
