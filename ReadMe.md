@@ -62,6 +62,17 @@ Result
 
 Nothing fancy but it saves you the time of writing the serialization and deserialization code.
 
+=======
+var People = file.Data;
+
+// Now you can use your list as you want
+People.Add(new Person { Name = "Adam", LastName = "West" });
+People.Add(new Person { Name = "Bob", LastName = "Hoskins" });
+People.Add(new Person { Name = "James", LastName = "Woods" });
+
+// Save the list
+file.Save();
+```
 ## Source code
 You can find the code on my [Github](https://github.com/MarcusMedinaPro/JsonFileWrapper) account.
 
