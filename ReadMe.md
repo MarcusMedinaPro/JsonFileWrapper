@@ -26,11 +26,43 @@ class Person
 ```cs
 using MarcusMedinaPro.JsonFileWrapper;
 // preparing the object
-var file = new JsonFile<List<Person>>("Friends")
+var file = new JsonFile<List<Person>>("Cool Actors")
 {
     Data = new List<Person>(),
 };
 file.Load();
+var Actors = file.Data;
+
+// Now you can use your list as you want
+Actors.Add(new Person { Name = "Adam", LastName = "West" });
+Actors.Add(new Person { Name = "Bob", LastName = "Hoskins" });
+Actors.Add(new Person { Name = "James", LastName = "Woods" });
+
+// Save the sorted list
+file.Data = Actors.OrderBy(x => x.LastName).ToList();
+file.Save();
+```
+Result
+```json
+[
+  {
+    "LastName": "Hoskins",
+    "Name": "Bob"
+  },
+  {
+    "LastName": "West",
+    "Name": "Adam"
+  },
+  {
+    "LastName": "Woods",
+    "Name": "James"
+  }
+]
+```
+
+Nothing fancy but it saves you the time of writing the serialization and deserialization code.
+
+=======
 var People = file.Data;
 
 // Now you can use your list as you want

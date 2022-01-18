@@ -1,53 +1,36 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
+		<Authors>Marcus Medina</Authors>
+		<Company>MarcusMedinaPro</Company>
+		<Owner>Marcus Medina</Owner>
+		<Copyright>Copyright (c) Marcus Medina,2022.</Copyright>
+		<Description>JSON file wrapper with Save and load functions</Description>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<Version>1.0.2</Version>
-		<FileVersion>1.0.2</FileVersion>
-		<AssemblyVersion>1.0.2</AssemblyVersion>
-		<Authors>Marcus Medina</Authors>
-		<Owner>Marcus Medina</Owner>
-		<Company>MarcusMedinaPro</Company>
-		<Description>JSON file wrapper with Save and load functions</Description>
-		<RootNamespace>MarcusMedinaPro.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-		<PackageTags>json;wrapper;c#;csharp;dotnet;core;.net;load;save</PackageTags>
+		<PackageIcon>content/json-file.png</PackageIcon>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageProjectUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper</RepositoryUrl>
+		<RepositoryUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper.git</RepositoryUrl>
+		<PackageReadmeFile>ReadMe.md</PackageReadmeFile>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<PackageTags>json;wrapper;c#;csharp;dotnet;core;.net;load;save</PackageTags>
+		<RootNamespace>MarcusMedinaPro.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<TargetFramework>net6.0</TargetFramework>
+		<Version>1.0.2</Version>
+		<AssemblyVersion>1.0.2</AssemblyVersion>
+		<FileVersion>1.0.2</FileVersion>
 		<ApplicationIcon>json-file.ico</ApplicationIcon>
-		<PackageIcon>json-file.png</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Include="json-file.png">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </Content>
+		<Content Include="./json-file.ico" Pack="true" PackagePath="\" />
+		<Content Include="./json-file.png" Pack="true" PackagePath="\" />
+		<Content Include="../ReadMe.md" Pack="true" PackagePath="\" />
+		<Content Include="../LICENSE" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Resource Include="json-file.ico">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </Resource>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	</ItemGroup>
-
-	<ItemGroup>
-		<Resource Include="ReadMe.md">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</Resource>
-	</ItemGroup>
-
-	<ItemGroup>
-		<Resource Include="LICENSE">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</Resource>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-	</ItemGroup> 
 </Project>
