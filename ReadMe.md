@@ -62,7 +62,7 @@ Result
 
 Nothing fancy but it saves you the time of writing the serialization and deserialization code.
 
-=======
+```csharp
 var People = file.Data;
 
 // Now you can use your list as you want
