@@ -1,13 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<Authors>Marcus Medina</Authors>
-		<Company>MarcusMedinaPro</Company>
-		<Owner>Marcus Medina</Owner>
-		<Copyright>Copyright (c) Marcus Medina,2022.</Copyright>
-		<Description>JSON file wrapper with Save and load functions</Description>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<RootNamespace>MarcusMedinaPro.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<TargetFramework>net6.0</TargetFramework>
+		<Version>1.0.3</Version>
+		<AssemblyVersion>1.0.3</AssemblyVersion>
+		<FileVersion>1.0.3</FileVersion>
+		<ApplicationIcon>json-file.ico</ApplicationIcon>
+	</PropertyGroup>
+	<PropertyGroup>
+		<Authors>Marcus Medina</Authors>
+		<Company>MarcusMedinaPro</Company>
+		<Copyright>Copyright (c) Marcus Medina,2022.</Copyright>
+		<Description>JSON file wrapper with Save and load functions</Description>
 		<PackageIcon>content/json-file.png</PackageIcon>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageProjectUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper</PackageProjectUrl>
@@ -15,12 +22,6 @@
 		<PackageReadmeFile>ReadMe.md</PackageReadmeFile>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<PackageTags>json;wrapper;c#;csharp;dotnet;core;.net;load;save</PackageTags>
-		<RootNamespace>MarcusMedinaPro.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-		<TargetFramework>net6.0</TargetFramework>
-		<Version>1.0.2</Version>
-		<AssemblyVersion>1.0.2</AssemblyVersion>
-		<FileVersion>1.0.2</FileVersion>
-		<ApplicationIcon>json-file.ico</ApplicationIcon>
 	</PropertyGroup>
 
 	<ItemGroup>

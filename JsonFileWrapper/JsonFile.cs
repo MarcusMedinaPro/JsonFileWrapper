@@ -31,12 +31,13 @@ public class JsonFile<T> where T : new()
             DefaultValueHandling = DefaultValueHandling.Ignore,
             ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
         };
+        Load();
     }
 
     /// <summary>
     /// Gets or sets the Data object.
     /// </summary>
-    public T? Data { get; set; } = new T();
+    public T? Data { get; set; }
 
     /// <summary>
     /// Gets or sets the Filename, just the name, without suffix. <see cref="Suffix"/> will be added automatically.
