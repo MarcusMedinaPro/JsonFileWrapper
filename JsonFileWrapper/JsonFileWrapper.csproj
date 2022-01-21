@@ -15,7 +15,7 @@
 		<Company>MarcusMedinaPro</Company>
 		<Copyright>Copyright (c) Marcus Medina,2022.</Copyright>
 		<Description>JSON file wrapper with Save and load functions</Description>
-		<PackageIcon>content/json-file.png</PackageIcon>
+		<PackageIcon>json-file.png</PackageIcon>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageProjectUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper.git</RepositoryUrl>
