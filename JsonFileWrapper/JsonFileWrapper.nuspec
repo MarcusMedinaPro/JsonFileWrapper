@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package >
 	<metadata minClientVersion="2.5">
-		<id>MarcusMedinaPro.JsonFileWrapper</id>
+		<id>JsonFileWrapper</id>
 		<version>$Version$</version>
 		<title>JsonFileWrapper</title>
 		<authors>$Authors$</authors>
 		<requireLicenseAcceptance>true</requireLicenseAcceptance>
 		<license type="file">content/LICENSE</license>
-		<icon>$PackageIcon$</icon>
+		<icon>content/$PackageIcon$</icon>
 		<projectUrl>$PackageProjectUrl$</projectUrl>
 		<repository type="git" url="https://github.com/MarcusMedinaPro/JsonFileWrapper.git"></repository>
 		<description>$description$</description>
@@ -25,5 +25,8 @@
 	</metadata>
 	<files>
 		<file src="..\Readme.md" target="docs\" />
+		<file src="..\LICENSE" target="docs\" />
+		<file src="json-file.ico" target="contents\" />
+		<file src="json-file.png" target="contents\" />
 	</files>
 </package>
