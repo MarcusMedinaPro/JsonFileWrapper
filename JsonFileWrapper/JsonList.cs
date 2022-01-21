@@ -281,7 +281,7 @@ public class JsonList<T> : ICloneable, IEnumerable, IEnumerable<T>, IDisposable 
             tmpList = new List<T>();
         }
 
-        tmpList.AddRange(tmpList);
+        TheList.AddRange(tmpList);
 
         return tmpList;
     }
