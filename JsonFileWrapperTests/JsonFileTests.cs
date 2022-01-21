@@ -152,4 +152,28 @@ public class JsonFileTests
         // Assert
         Assert.IsNotNull(file);
     }
+
+    /// <summary>
+    /// Saves a test.
+    /// </summary>
+    [TestMethod()]
+    public void SaveTestBackup()
+    {
+        //Arrange
+        var file = new JsonFile<List<string>>(filename)
+        {
+            Data = new List<string>() { "Hello Crazy World" },
+            Format = null,
+        };
+
+        if (File.Exists(filename + ".json.bak"))
+            File.Delete(filename + ".json.bak");
+
+        // Act
+        file.Save();
+        file.Save();
+
+        // Assert
+        Assert.IsTrue(File.Exists(filename+".json.bak"));
+    }
 }
