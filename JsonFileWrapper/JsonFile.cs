@@ -15,7 +15,7 @@ using Newtonsoft.Json;
 /// Defines the <see cref="JsonFile{T}" />.
 /// </summary>
 /// <typeparam name="T">Any object that can be instansiated.</typeparam>
-public class JsonFile<T> where T : new()
+public class JsonFile<T> : IDisposable where T : new()
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="JsonFile{T}"/> class.
@@ -31,7 +31,7 @@ public class JsonFile<T> where T : new()
             DefaultValueHandling = DefaultValueHandling.Ignore,
             ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
         };
-        Load();
+        _ = Load();
     }
 
     /// <summary>
@@ -113,6 +113,12 @@ public class JsonFile<T> where T : new()
             Debug.WriteLine(ex.Message);
         }
 
+        if (File.Exists($"{Filename}.{Suffix}.bak"))
+            File.Delete($"{Filename}.{Suffix}.bak");
+
+        if (File.Exists($"{Filename}.{Suffix}"))
+            File.Move($"{Filename}.{Suffix}", $"{Filename}.{Suffix}.bak");
+
         try
         {
             File.WriteAllText($"{Filename}.{Suffix}", json);
@@ -122,5 +128,14 @@ public class JsonFile<T> where T : new()
             Debug.WriteLine("Error saving data:");
             Debug.WriteLine(ex.Message);
         }
+    }
+
+    public void Dispose()
+    {
+        Save();
+        Data = default;
+
+        //This will prevent derived types that introduce a finalizer from needing to re-implement 'IDisposable' to call it.
+        GC.SuppressFinalize(this);
     }
 }
