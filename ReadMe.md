@@ -13,8 +13,8 @@ install-package JsonFileWrapper
 
 ## Usage
 Check the document for each file
-###  [JsonFile](https://github.com/MarcusMedinaPro/JsonFileWrapper/docs/JsonFile.md)    
-###  [JsonList](https://github.com/MarcusMedinaPro/JsonFileWrapper/docs/JsonList.md)    
+###  [JsonFile](https://github.com/MarcusMedinaPro/JsonFileWrapper/JsonFileWrapper/docs/JsonFile.md)    
+###  [JsonList](https://github.com/MarcusMedinaPro/JsonFileWrapper/JsonFileWrapper/docs/JsonList.md)    
 
 
 Nothing fancy but it saves you the time of writing the serialization and deserialization code.
