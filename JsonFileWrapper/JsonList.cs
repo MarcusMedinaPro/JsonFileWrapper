@@ -417,9 +417,9 @@ public class JsonList<T> : ICloneable, IEnumerable, IEnumerable<T>, IDisposable 
         var tmpList = new List<T>();
         foreach (var item in TheList)
         {
-            if (item is ICloneable)
+            if (item is ICloneable cloneable)
             {
-                var clone = (ICloneable)item;
+                var clone = cloneable;
                 tmpList.Add((T)clone.Clone());
             }
             else
