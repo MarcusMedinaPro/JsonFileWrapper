@@ -7,13 +7,10 @@
 		<TargetFramework>net6.0</TargetFramework>
 	</PropertyGroup>
 	<PropertyGroup>
-		<Version>1.0.4</Version>
-		<AssemblyVersion>1.0.4</AssemblyVersion>
-		<FileVersion>1.0.4</FileVersion>
+		<Version>1.0.5</Version>
+		<AssemblyVersion>1.0.5</AssemblyVersion>
+		<FileVersion>1.0.5</FileVersion>
 		<ApplicationIcon>json-file.ico</ApplicationIcon>
-		<Version>1.0.4</Version>
-		<AssemblyVersion>1.0.4</AssemblyVersion>
-		<FileVersion>1.0.4</FileVersion>
 		<ApplicationIcon>json-file.ico</ApplicationIcon>
 		<Authors>Marcus Medina</Authors>
 		<Company>MarcusMedinaPro</Company>
