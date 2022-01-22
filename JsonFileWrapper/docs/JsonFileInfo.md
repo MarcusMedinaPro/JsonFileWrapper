@@ -1,6 +1,8 @@
 ﻿# Jsonfile
 
-A generic class that works like a wrapper that loads and saves a given object. The main difference with the JsonFile class is that this one acts like a list.
+A generic class that works like a wrapper that loads and saves a given object.
+
+The public methods of the (JsonFile.cs.md)[../Docs/JsonFile.cs.md] are described (here)[../Docs/JsonFile.cs.md]
 
 ## Usage
 The whole idea is an object wrapper to handle saving and loading of an object, so the coder using the class don't need to think about that.
@@ -26,16 +28,13 @@ class GameState
 using MarcusMedinaPro.JsonFileWrapper;
 
 // preparing the object
-var PlayerState = new JsonFile<GameState>("Gamers");
+string playerName="LeetMan";
+var PlayerState = new JsonFile<GameState>(playerName);
 // PlayerState is loaded when the object is created, 
 // if no file is found an empty object is created.
 
 // Change data values
-var gamer = PlayerState.Find(p => p.Name == "Mr Leet");
-gamer.Xp+=100;
-
-// Works with indexing too
-PlayerState[3].ATK=10;
+PlayerState.Data.XP+=10;
 
 // When the gaming session is over
 // Save the player state
@@ -46,3 +45,4 @@ PlayerState.Save();
 This project is meant to be simple, it was written to explain to my students how to use generic classes.
 
 ##  [Back to readme](https://github.com/MarcusMedinaPro/JsonFileWrapper/blob/main/ReadMe.md)    
+

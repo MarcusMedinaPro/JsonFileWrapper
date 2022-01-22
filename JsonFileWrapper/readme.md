@@ -1,3 +1,6 @@
-# Source code
-This is the folder with the executables for this project
+# 
+This is the readme folder
 
+This are the files in the project
+(JsonFile.cs)[../Docs/JsonFile.md]
+(JsonList.cs)[../Docs/JsonList.md]
