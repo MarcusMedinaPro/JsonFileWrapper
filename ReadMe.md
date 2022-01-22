@@ -6,29 +6,48 @@ This project is losely based on the Bridge design pattern.
 
 ## Installation
 
-Use the package manager in Visual Studio to install JsonFileWrapper or use the package-manager window.
+Use the package manager in Visual Studio to install JsonFileWrapper or use the [package-manager](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio) window.
 ```
 install-package JsonFileWrapper
 ```
 
 ## Usage
-Check the document for each file
-###  [JsonFile](https://github.com/MarcusMedinaPro/JsonFileWrapper/JsonFileWrapper/docs/JsonFile.md)    
-###  [JsonList](https://github.com/MarcusMedinaPro/JsonFileWrapper/JsonFileWrapper/docs/JsonList.md)    
-
-
 Nothing fancy but it saves you the time of writing the serialization and deserialization code.
+Check the document for each file in the [docs](https://github.com/MarcusMedinaPro/JsonFileWrapper/docs/) folder.
 
-var People = file.Data;
+### JsonFile
+For information about [JsonFile](https://github.com/MarcusMedinaPro/JsonFileWrapper/docs/JsonFile.md)  check the readme file in the [docs](https://github.com/MarcusMedinaPro/JsonFileWrapper/docs/) folder.
+```cs
+// Add using to your code
+using MarcusMedinaPro.JsonFileWrapper;
 
-// Now you can use your list as you want
-People.Add(new Person { Name = "Adam", LastName = "West" });
-People.Add(new Person { Name = "Bob", LastName = "Hoskins" });
-People.Add(new Person { Name = "James", LastName = "Woods" });
+// Initiate the object
+var model = new JsonFile<MyModel>("Model");
 
-// Save the list
-file.Save();
+// The object is initiated and if the file "model" exists, 
+// it will be loaded to the object.
+model.Name="Mr Magoo";
+
+model.Save();
 ```
+
+### JsonList
+For information about [JsonList](https://github.com/MarcusMedinaPro/JsonFileWrapper/docs/JsonList.md)     check the readme file in the [docs](https://github.com/MarcusMedinaPro/JsonFileWrapper/docs/) folder.
+```cs
+// Add using to your code
+using MarcusMedinaPro.JsonFileWrapper;
+
+// Initiate the object
+var model = new JsonFile<MyModel>("Model");
+
+// The object is initiated and if the file "model" exists, 
+// it will be loaded to the object.
+model.Add(new MyModel{Name="Mr Magoo"});
+
+model.Save();
+```
+
+
 ## Source code
 You can find the code on my [Github](https://github.com/MarcusMedinaPro/JsonFileWrapper) account.
 
@@ -37,8 +56,24 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
-## License
-[Apache 2](https://tldrlegal.com/license/apache-license-2.0-%28apache-2.0%29)
+## Disclaimer
+This project is meant to be simple, it was written to explain to my students how to use generic classes.
 
 ## Thanks list
 [Json file Icon](https://iconscout.com/icons/json-file) by [First Styles](https://iconscout.com/contributors/first-styles) on [Iconscout](https://iconscout.com)
+
+## License 
+
+Copyright 2012 Marcus Medina
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

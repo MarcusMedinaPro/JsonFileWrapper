@@ -34,6 +34,7 @@ var PlayerState = new JsonFile<GameState>(playerName);
 // Change data values
 PlayerState.Data.XP+=10;
 
+// When the gaming session is over
 // Save the player state
 PlayerState.Save();
 ```
@@ -41,4 +42,4 @@ PlayerState.Save();
 ## Disclaimer
 This project is meant to be simple, it was written to explain to my students how to use generic classes.
 
-##  [Back to readme](./ReadMe.md)    
+##  [Back to readme](https://github.com/MarcusMedinaPro/JsonFileWrapper/ReadMe.md)    
