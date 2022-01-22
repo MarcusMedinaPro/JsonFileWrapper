@@ -42,4 +42,4 @@ PlayerState.Save();
 ## Disclaimer
 This project is meant to be simple, it was written to explain to my students how to use generic classes.
 
-##  [Back to readme](https://github.com/MarcusMedinaPro/JsonFileWrapper/ReadMe.md)    
+##  [Back to readme](https://github.com/MarcusMedinaPro/JsonFileWrapper/blob/main/ReadMe.md)    

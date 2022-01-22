@@ -168,6 +168,12 @@ public class JsonList<T> : ICloneable, IEnumerable, IEnumerable<T>, IDisposable 
     public void Delete(Predicate<T> match) => TheList.RemoveAll(match);
 
     /// <summary>
+    /// Find specified match (wrap of FirstOrDefault).
+    /// </summary>
+    /// <param name="match">The match.</param>
+    public T? Find(Func<T, bool> match) => TheList.FirstOrDefault(match);
+
+    /// <summary>
     /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
     /// </summary>
     public void Dispose()
