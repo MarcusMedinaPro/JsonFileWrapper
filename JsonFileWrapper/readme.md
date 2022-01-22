@@ -1,6 +1,8 @@
 # 
-This is the readme folder
+This is the main folder
 
 This are the files in the project
-[JsonFile.cs](docs/JsonFile.md)
-[JsonList.cs](docs/JsonList.md)
+<ul>
+<li>[JsonFile.cs](docs/JsonFile.cs.md)</li>
+<li>[JsonList.cs](docs/JsonList.cs.md)</li>
+</ul>
