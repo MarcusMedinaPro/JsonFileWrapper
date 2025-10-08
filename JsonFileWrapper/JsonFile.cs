@@ -53,6 +53,11 @@ public class JsonFile<T> : IDisposable where T : new()
     /// </summary>
     public string Suffix { get; set; } = "json";
 
+    /// <summary>
+    /// Implicit conversion operator to convert JsonFile&lt;T&gt; to T.
+    /// </summary>
+    /// <param name="file">The JsonFile instance to convert.</param>
+    /// <returns>The Data property of type T.</returns>
     public static implicit operator T(JsonFile<T> file)
     {
         file.Data ??= new T();
@@ -127,6 +132,9 @@ public class JsonFile<T> : IDisposable where T : new()
         }
     }
 
+    /// <summary>
+    /// Disposes the JsonFile instance, saving any pending changes.
+    /// </summary>
     public void Dispose()
     {
         Save();

@@ -62,10 +62,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Setup .NET
+      - name: Setup .NET 7
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}
+          dotnet-version: '7.0.x'
 
       - name: Restore dependencies
         run: dotnet restore
@@ -101,10 +101,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Setup .NET
+      - name: Setup .NET 7
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}
+          dotnet-version: '7.0.x'
 
       - name: Pack NuGet Package
         run: |
@@ -134,10 +134,10 @@ jobs:
           name: nuget-package
           path: ./packages
 
-      - name: Setup .NET
+      - name: Setup .NET 7
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}
+          dotnet-version: '7.0.x'
 
       - name: Publish to NuGet.org
         run: |
