@@ -1,7 +1,7 @@
 ﻿# JsonFileWrapper
 
 [![NuGet](https://img.shields.io/nuget/v/JsonFileWrapper.svg)](https://www.nuget.org/packages/JsonFileWrapper/)
-[![.NET](https://img.shields.io/badge/.NET-7.0+-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
+[![.NET](https://img.shields.io/badge/.NET-8.0+-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 A simple, educational generic wrapper for JSON file operations in .NET. Simplifies 
@@ -24,7 +24,7 @@ JSON files without writing repetitive serialization code.
 
 ## Requirements
 
-- .NET 7.0 or higher
+- .NET 8.0 or higher
 
 ## Installation
 
@@ -203,7 +203,7 @@ This library demonstrates several C# concepts:
 Version 1.1.0 introduces breaking changes:
 
 - **Newtonsoft.Json → System.Text.Json**: Update your `Format` settings
-- **.NET 6 → .NET 7**: Update project target framework
+- **.NET 6 → .NET 8**: Update project target framework
 - **MSTest → xUnit**: If using tests, update test framework
 
 ### Updating JsonSerializerSettings

@@ -4,7 +4,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<RootNamespace>MarcusMedinaPro.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 	</PropertyGroup>
 	<PropertyGroup>
 		<Version>1.1.0</Version>
@@ -14,14 +14,14 @@
 		<Authors>Marcus Medina</Authors>
 		<Company>MarcusMedinaPro</Company>
 		<Copyright>Copyright (c) Marcus Medina, 2022-2025.</Copyright>
-		<Description>JSON file wrapper with Save and load functions for .NET 7+</Description>
+		<Description>JSON file wrapper with Save and load functions for .NET 8+</Description>
 		<PackageIcon>json-file.png</PackageIcon>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper.git</RepositoryUrl>
 		<PackageReadmeFile>ReadMe.md</PackageReadmeFile>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-		<PackageTags>json;wrapper;c#;csharp;dotnet;core;.net;load;save;net7</PackageTags>
+		<PackageTags>json;wrapper;c#;csharp;dotnet;core;.net;load;save;net8</PackageTags>
 		<LangVersion>latest</LangVersion>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>

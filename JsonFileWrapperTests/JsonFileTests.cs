@@ -93,7 +93,7 @@ public class JsonFileTests : IDisposable
 
         // Assert
         Assert.NotNull(file.Data);
-        Assert.Equal(expected, file.Data.Count);
+        Assert.Empty(file.Data);
     }
 
     /// <summary>
@@ -111,7 +111,7 @@ public class JsonFileTests : IDisposable
         _ = file.Load();
 
         // Assert
-        Assert.Equal(string.Join(',', expected), message);
+        Assert.Equal(message, string.Join(',', expected));
     }
 
     /// <summary>
@@ -121,7 +121,6 @@ public class JsonFileTests : IDisposable
     public void SavesEvenIfDataIsNull()
     {
         // Arrange
-        const int expected = 0;
         var file = new JsonFile<List<string>>("DataNull");
 
         // Act
@@ -129,7 +128,7 @@ public class JsonFileTests : IDisposable
 
         // Assert
         Assert.NotNull(file.Data);
-        Assert.Equal(expected, file.Data.Count);
+        Assert.Empty(file.Data);
     }
 
     /// <summary>

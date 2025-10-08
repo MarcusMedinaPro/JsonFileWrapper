@@ -9,7 +9,7 @@ on:
       - 'v*'  # Trigger on version tags (v1.0.0, v1.1.0, etc.)
 
 env:
-  DOTNET_VERSION: '7.0.x'
+  DOTNET_VERSION: '8.0.x'
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
 
@@ -62,10 +62,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Setup .NET 7
+      - name: Setup .NET 8
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: '7.0.x'
+          dotnet-version: '8.0.x'
 
       - name: Restore dependencies
         run: dotnet restore
@@ -101,10 +101,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Setup .NET 7
+      - name: Setup .NET 8
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: '7.0.x'
+          dotnet-version: '8.0.x'
 
       - name: Pack NuGet Package
         run: |
@@ -134,10 +134,10 @@ jobs:
           name: nuget-package
           path: ./packages
 
-      - name: Setup .NET 7
+      - name: Setup .NET 8
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: '7.0.x'
+          dotnet-version: '8.0.x'
 
       - name: Publish to NuGet.org
         run: |

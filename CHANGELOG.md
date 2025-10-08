@@ -13,14 +13,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - **BREAKING**: Migrated from Newtonsoft.Json to System.Text.Json
-- **BREAKING**: Updated target framework from .NET 6 to .NET 7
+- **BREAKING**: Updated target framework from .NET 6 to .NET 8
 - **BREAKING**: Migrated tests from MSTest to xUnit
 - **BREAKING**: Changed license from Apache 2.0 to MIT
 - Updated copyright year to 2022-2025
 - Improved null-coalescing operator usage (`??=`)
-- Updated package description to specify .NET 7+ support
+- Updated package description to specify .NET 8+ support
 - Added `LangVersion` to use latest C# features
 - Enabled XML documentation generation
+- Added comprehensive XML documentation for all public members
 
 ### Fixed
 - Removed duplicate version properties in csproj file
