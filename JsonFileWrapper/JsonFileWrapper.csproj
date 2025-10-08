@@ -4,38 +4,32 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<RootNamespace>MarcusMedinaPro.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net7.0</TargetFramework>
 	</PropertyGroup>
 	<PropertyGroup>
-		<Version>1.0.4</Version>
-		<AssemblyVersion>1.0.4</AssemblyVersion>
-		<FileVersion>1.0.4</FileVersion>
-		<ApplicationIcon>json-file.ico</ApplicationIcon>
-		<Version>1.0.4</Version>
-		<AssemblyVersion>1.0.4</AssemblyVersion>
-		<FileVersion>1.0.4</FileVersion>
+		<Version>1.1.0</Version>
+		<AssemblyVersion>1.1.0</AssemblyVersion>
+		<FileVersion>1.1.0</FileVersion>
 		<ApplicationIcon>json-file.ico</ApplicationIcon>
 		<Authors>Marcus Medina</Authors>
 		<Company>MarcusMedinaPro</Company>
-		<Copyright>Copyright (c) Marcus Medina,2022.</Copyright>
-		<Description>JSON file wrapper with Save and load functions</Description>
+		<Copyright>Copyright (c) Marcus Medina, 2022-2025.</Copyright>
+		<Description>JSON file wrapper with Save and load functions for .NET 7+</Description>
 		<PackageIcon>json-file.png</PackageIcon>
-		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper.git</RepositoryUrl>
 		<PackageReadmeFile>ReadMe.md</PackageReadmeFile>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-		<PackageTags>json;wrapper;c#;csharp;dotnet;core;.net;load;save</PackageTags>
+		<PackageTags>json;wrapper;c#;csharp;dotnet;core;.net;load;save;net7</PackageTags>
+		<LangVersion>latest</LangVersion>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<Content Include="./json-file.ico" Pack="true" PackagePath="\" />
 		<Content Include="./json-file.png" Pack="true" PackagePath="\" />
 		<Content Include="../ReadMe.md" Pack="true" PackagePath="\" />
-		<Content Include="../LICENSE" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-	</ItemGroup>
 </Project>

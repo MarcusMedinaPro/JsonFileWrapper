@@ -1,7 +1,7 @@
 ﻿// -----------------------------------------------------------------------------------------------
-//  JsonFile.cs by Marcus Medina, Copyright (C) 2021, http://MarcusMedina.Pro.
-//  Published under Apache License 2.0 (Apache-2.0)
-//  https://www.tldrlegal.com/l/apache2
+//  JsonFile.cs by Marcus Medina, Copyright (C) 2021-2025, http://MarcusMedina.Pro.
+//  Published under MIT License
+//  https://opensource.org/licenses/MIT
 // -----------------------------------------------------------------------------------------------
 
 namespace MarcusMedinaPro.JsonFileWrapper;
@@ -9,7 +9,7 @@ namespace MarcusMedinaPro.JsonFileWrapper;
 using System;
 using System.Diagnostics;
 using System.IO;
-using Newtonsoft.Json;
+using System.Text.Json;
 
 /// <summary>
 /// Defines the <see cref="JsonFile{T}" />.
@@ -24,12 +24,11 @@ public class JsonFile<T> : IDisposable where T : new()
     public JsonFile(string filename)
     {
         Filename = filename;
-        Format = new JsonSerializerSettings
+        Format = new JsonSerializerOptions
         {
-            Formatting = Formatting.Indented,
-            NullValueHandling = NullValueHandling.Ignore,
-            DefaultValueHandling = DefaultValueHandling.Ignore,
-            ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+            WriteIndented = true,
+            DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+            ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles,
         };
         _ = Load();
     }
@@ -47,7 +46,7 @@ public class JsonFile<T> : IDisposable where T : new()
     /// <summary>
     /// Gets or Sets the serialisation format settings.
     /// </summary>
-    public JsonSerializerSettings? Format { get; set; }
+    public JsonSerializerOptions? Format { get; set; }
 
     /// <summary>
     /// Gets or Sets the suffix (default is .json).
@@ -56,8 +55,7 @@ public class JsonFile<T> : IDisposable where T : new()
 
     public static implicit operator T(JsonFile<T> file)
     {
-        if (file.Data == null)
-            file.Data = new T();
+        file.Data ??= new T();
         return file.Data;
     }
 
@@ -83,7 +81,7 @@ public class JsonFile<T> : IDisposable where T : new()
 
         try
         {
-            Data = JsonConvert.DeserializeObject<T>(data);
+            Data = JsonSerializer.Deserialize<T>(data, Format);
         }
         catch (Exception ex)
         {
@@ -101,11 +99,10 @@ public class JsonFile<T> : IDisposable where T : new()
     public void Save()
     {
         var json = "";
-        if (Data == null)
-            Data = new T();
+        Data ??= new T();
         try
         {
-            json = JsonConvert.SerializeObject(Data, null, Format);
+            json = JsonSerializer.Serialize(Data, Format);
         }
         catch (Exception ex)
         {

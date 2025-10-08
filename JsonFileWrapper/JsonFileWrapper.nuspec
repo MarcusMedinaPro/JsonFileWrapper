@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <package >
 	<metadata minClientVersion="2.5">
 		<id>JsonFileWrapper</id>
@@ -24,7 +24,7 @@
 		</dependencies>
 	</metadata>
 	<files>
-		<file src="..\Readme.md" target="docs\" />
+		<file src="..\ReadMe.md" target="docs\" />
 		<file src="..\LICENSE" target="docs\" />
 		<file src="json-file.ico" target="content\" />
 		<file src="json-file.png" target="content\" />
