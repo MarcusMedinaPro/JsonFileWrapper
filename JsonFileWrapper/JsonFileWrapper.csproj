@@ -19,6 +19,8 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper.git</RepositoryUrl>
+<RepositoryType>git</RepositoryType>
+
 		<PackageReadmeFile>ReadMe.md</PackageReadmeFile>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<PackageTags>json;wrapper;c#;csharp;dotnet;core;.net;load;save;net8</PackageTags>

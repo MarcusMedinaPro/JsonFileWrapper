@@ -252,3 +252,6 @@ Licensed under [MIT License](https://opensource.org/licenses/MIT)
 ---
 
 **Made with ❤️ for educational purposes**
+
+---
+_For metadata and SEO keywords, see [SEO.md](SEO.md)._
