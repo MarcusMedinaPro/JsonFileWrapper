@@ -5,6 +5,7 @@
 - **Authors:** Marcus Medina
 - **Project URL:** https://github.com/MarcusMedinaPro/JsonFileWrapper
 - **Repository:** https://github.com/MarcusMedinaPro/JsonFileWrapper.git
+- **Repository Type:** git
 
 ## Description
 JSON file wrapper with Save and load functions for .NET 8+
