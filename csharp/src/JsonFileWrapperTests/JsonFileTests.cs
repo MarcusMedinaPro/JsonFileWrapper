@@ -85,7 +85,6 @@ public class JsonFileTests : IDisposable
     public void LoadEmptyFileTest()
     {
         // Arrange
-        const int expected = 0;
         var file = new JsonFile<List<string>>("FileDoesNotExist");
 
         // Act

@@ -3,13 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.0.11104.47 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonFileWrapper", "JsonFileWrapper\JsonFileWrapper.csproj", "{AA417E90-018F-483E-94DF-3F5E78F20005}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonFileWrapper", "src\JsonFileWrapper\JsonFileWrapper.csproj", "{AA417E90-018F-483E-94DF-3F5E78F20005}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonFileWrapperTests", "JsonFileWrapperTests\JsonFileWrapperTests.csproj", "{4E89CFE4-FAE1-989E-B41D-CB7518B0D9C5}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{FF46694C-1ADE-4DDC-842A-6807F1B6DDCD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonFileWrapper.Demo", "samples\JsonFileWrapper.Demo\JsonFileWrapper.Demo.csproj", "{A9A6CEB1-58F9-4362-8E3A-AD0E65625785}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonFileWrapperTests", "src\JsonFileWrapperTests\JsonFileWrapperTests.csproj", "{4E89CFE4-FAE1-989E-B41D-CB7518B0D9C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,15 +21,8 @@ Global
 		{4E89CFE4-FAE1-989E-B41D-CB7518B0D9C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E89CFE4-FAE1-989E-B41D-CB7518B0D9C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E89CFE4-FAE1-989E-B41D-CB7518B0D9C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A9A6CEB1-58F9-4362-8E3A-AD0E65625785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9A6CEB1-58F9-4362-8E3A-AD0E65625785}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9A6CEB1-58F9-4362-8E3A-AD0E65625785}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9A6CEB1-58F9-4362-8E3A-AD0E65625785}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{A9A6CEB1-58F9-4362-8E3A-AD0E65625785} = {FF46694C-1ADE-4DDC-842A-6807F1B6DDCD}
 	EndGlobalSection
 EndGlobal
