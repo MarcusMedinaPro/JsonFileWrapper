@@ -1,7 +1,6 @@
-using System.Text;
 using MarcusMedinaPro.JsonFileWrapper;
 
-Console.OutputEncoding = Encoding.UTF8;
+Console.OutputEncoding = System.Text.Encoding.UTF8; // Enable emoji support
 
 var storeFolder = Path.Combine(Path.GetTempPath(), "json-wrapper-demo");
 Directory.CreateDirectory(storeFolder);
