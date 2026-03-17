@@ -22,7 +22,7 @@
 		<RepositoryUrl>https://github.com/MarcusMedinaPro/JsonFileWrapper.git</RepositoryUrl>
 <RepositoryType>git</RepositoryType>
 
-		<PackageReadmeFile>ReadMe.md</PackageReadmeFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<PackageTags>json;wrapper;c#;csharp;dotnet;core;.net;load;save;net10</PackageTags>
 		<LangVersion>14.0</LangVersion>
@@ -32,7 +32,7 @@
 	<ItemGroup>
 		<Content Include="./json-file.ico" Pack="true" PackagePath="\" />
 		<Content Include="./json-file.png" Pack="true" PackagePath="\" />
-		<Content Include="../ReadMe.md" Pack="true" PackagePath="\" />
+		<Content Include="../../README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 </Project>
