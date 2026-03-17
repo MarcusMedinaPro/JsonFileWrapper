@@ -34,7 +34,7 @@ jobs:
         run: dotnet test csharp/GenericJsonWrap.slnx --configuration Release --no-build --verbosity normal --logger trx
 
       - name: Pack
-        run: dotnet pack --configuration Release --no-build --output ./nupkgs
+        run: dotnet pack csharp/src/JsonFileWrapper/JsonFileWrapper.csproj --configuration Release --no-build --output ./nupkgs
 
       - name: Upload unsigned packages
         uses: actions/upload-artifact@v4
