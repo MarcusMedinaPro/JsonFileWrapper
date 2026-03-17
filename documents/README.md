@@ -1,7 +1,7 @@
 ﻿# JsonFileWrapper
 
 [![NuGet](https://img.shields.io/nuget/v/JsonFileWrapper.svg)](https://www.nuget.org/packages/JsonFileWrapper/)
-[![.NET](https://img.shields.io/badge/.NET-8.0+-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
+[![.NET](https://img.shields.io/badge/.NET-10.0+-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 A simple, educational generic wrapper for JSON file operations in .NET. Simplifies 
