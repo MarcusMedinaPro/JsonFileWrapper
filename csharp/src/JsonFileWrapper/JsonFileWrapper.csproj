@@ -32,7 +32,7 @@
 	<ItemGroup>
 		<Content Include="./json-file.ico" Pack="true" PackagePath="\" />
 		<Content Include="./json-file.png" Pack="true" PackagePath="\" />
-		<Content Include="../../README.md" Pack="true" PackagePath="\" />
+		<Content Include="../../../README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 </Project>
