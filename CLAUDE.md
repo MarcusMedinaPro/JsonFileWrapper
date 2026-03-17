@@ -71,7 +71,7 @@ MyData data = file; // Implicit conversion
 ### File Structure
 ```
 csharp/
-├── GenericJsonWrap.sln
+├── GenericJsonWrap.slnx
 └── src/
     ├── JsonFileWrapper/
     │   ├── JsonFile.cs              # Core generic wrapper

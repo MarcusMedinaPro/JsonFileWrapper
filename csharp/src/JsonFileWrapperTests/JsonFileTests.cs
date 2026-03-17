@@ -72,7 +72,7 @@ public class JsonFileTests : IDisposable
     {
         var file = new JsonFile<List<string>>("test")
         {
-            Data = new List<string>() { message },
+            Data = [message],
             Format = null
         };
         Assert.NotNull(file);
@@ -102,7 +102,7 @@ public class JsonFileTests : IDisposable
     public void LoadTest()
     {
         // Arrange
-        var expected = new List<string>() { message };
+        List<string> expected = [message];
         File.WriteAllText(filename, message);
         var file = new JsonFile<List<string>>(filename);
 
@@ -139,7 +139,7 @@ public class JsonFileTests : IDisposable
         // Arrange
         var file = new JsonFile<List<string>>(filename)
         {
-            Data = new List<string>() { "Hello Crazy World" },
+            Data = ["Hello Crazy World"],
             Format = null,
         };
 
@@ -159,18 +159,20 @@ public class JsonFileTests : IDisposable
         // Arrange
         var file = new JsonFile<List<string>>(filename)
         {
-            Data = new List<string>() { "Hello Crazy World" },
+            Data = ["Hello Crazy World"],
             Format = null,
         };
 
-        if (File.Exists(filename + ".json.bak"))
-            File.Delete(filename + ".json.bak");
+        var backupPath = $"{filename}.json.bak";
+
+        if (File.Exists(backupPath))
+            File.Delete(backupPath);
 
         // Act
         file.Save();
         file.Save();
 
         // Assert
-        Assert.True(File.Exists(filename + ".json.bak"));
+        Assert.True(File.Exists(backupPath));
     }
 }

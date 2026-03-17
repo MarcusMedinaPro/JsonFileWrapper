@@ -17,6 +17,10 @@ using System.Text.Json;
 /// <typeparam name="T">Any object that can be instansiated.</typeparam>
 public class JsonFile<T> : IDisposable where T : new()
 {
+    private string FullPath => $"{Filename}.{Suffix}";
+
+    private string BackupPath => $"{FullPath}.bak";
+
     /// <summary>
     /// Initializes a new instance of the <see cref="JsonFile{T}"/> class.
     /// </summary>
@@ -41,7 +45,7 @@ public class JsonFile<T> : IDisposable where T : new()
     /// <summary>
     /// Gets or sets the Filename, just the name, without suffix. <see cref="Suffix"/> will be added automatically.
     /// </summary>
-    public string Filename { get; } = "";
+    public string Filename { get; } = string.Empty;
 
     /// <summary>
     /// Gets or Sets the serialisation format settings.
@@ -70,11 +74,11 @@ public class JsonFile<T> : IDisposable where T : new()
     public T? Load()
     {
         var data = "[]";
-        if (File.Exists($"{Filename}.{Suffix}"))
+        if (File.Exists(FullPath))
         {
             try
             {
-                data = File.ReadAllText($"{Filename}.{Suffix}");
+                data = File.ReadAllText(FullPath);
             }
             catch (Exception ex)
             {
@@ -103,7 +107,7 @@ public class JsonFile<T> : IDisposable where T : new()
     /// </summary>
     public void Save()
     {
-        var json = "";
+        var json = string.Empty;
         Data ??= new T();
         try
         {
@@ -115,15 +119,15 @@ public class JsonFile<T> : IDisposable where T : new()
             Debug.WriteLine(ex.Message);
         }
 
-        if (File.Exists($"{Filename}.{Suffix}.bak"))
-            File.Delete($"{Filename}.{Suffix}.bak");
+        if (File.Exists(BackupPath))
+            File.Delete(BackupPath);
 
-        if (File.Exists($"{Filename}.{Suffix}"))
-            File.Move($"{Filename}.{Suffix}", $"{Filename}.{Suffix}.bak");
+        if (File.Exists(FullPath))
+            File.Move(FullPath, BackupPath);
 
         try
         {
-            File.WriteAllText($"{Filename}.{Suffix}", json);
+            File.WriteAllText(FullPath, json);
         }
         catch (Exception ex)
         {

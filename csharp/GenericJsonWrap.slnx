@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/JsonFileWrapper/JsonFileWrapper.csproj" />
+  <Project Path="src/JsonFileWrapperTests/JsonFileWrapperTests.csproj" />
+</Solution>
